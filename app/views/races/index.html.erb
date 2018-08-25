@@ -1,0 +1,18 @@
+<div id="page">
+    <p id="notice"><%= notice %></p>
+    <h1>Расы</h1>
+    <%= link_to 'Создать расу', new_race_path, class: 'center_btn' %>
+    
+    <% @families.each do |family| %>
+        <div class="col-2">
+            <h3><%= link_to family.title, family %></h3>
+            <hr>
+            <% @races.each do |race| %>
+                <% if race.family_id == family.id %>
+                    <p><%= link_to race.title, race %></p>
+                <% end %>
+            <% end %>
+        </div>
+    <% end %>
+        
+</div>

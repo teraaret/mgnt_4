@@ -1,0 +1,57 @@
+<%= form_with(model: paper, local: true) do |form| %>
+  <% if paper.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(paper.errors.count, "error") %> prohibited this paper from being saved:</h2>
+
+      <ul>
+      <% paper.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :paper_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :paper_body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tag %>
+    <%= form.text_field :tag, id: :paper_tag %>
+  </div>
+
+  <div class="field">
+    <%= form.label :character_id %>
+    <%= form.number_field :character_id, id: :paper_character_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :faction_id %>
+    <%= form.number_field :faction_id, id: :paper_faction_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= form.number_field :country_id, id: :paper_country_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :race_id %>
+    <%= form.number_field :race_id, id: :paper_race_id %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :family_id %>
+    <%= form.number_field :family_id, id: :paper_family_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

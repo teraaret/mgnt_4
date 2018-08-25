@@ -1,0 +1,67 @@
+<%= form_with(model: character, local: true) do |form| %>
+  <% if character.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(character.errors.count, "error") %> prohibited this character from being saved:</h2>
+
+      <ul>
+      <% character.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :character_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :character_body %>
+  </div>
+
+    <div class="field">
+        <%= form.label :race_id %>
+        <select name="character[race_id]" id="character_race_id">
+            <option value="0">-- Не выбрано</option>
+            <% @races.each do |race| %>
+                <option value="<%= race.id %>" <% if race.id == character.race_id %>selected<% end %> ><%= race.title %></option>
+            <% end %>
+        </select>
+    </div>
+
+  <div class="field">
+    <%= form.label :family_id %>
+    <%= form.number_field :family_id, id: :character_family_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.number_field :gender, id: :character_gender %>
+  </div>
+
+  <div class="field">
+    <%= form.label :magenta %>
+    <%= form.number_field :magenta, id: :character_magenta %>
+  </div>
+
+  <div class="field">
+    <%= form.label :story_id %>
+    <%= form.number_field :story_id, id: :character_story_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :faction_id %>
+    <%= form.number_field :faction_id, id: :character_faction_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country_id %>
+    <%= form.number_field :country_id, id: :character_country_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,26 @@
+<div id="page">
+    <p id="notice"><%= notice %></p>
+
+    <h2><%= @race.title %></h2>
+    <hr>
+    <p><%= simple_format(@race.body, {}, wrapper_tag: "p") %></p>
+    
+    <% if @family %>
+        <p>Фамилия: <%= link_to @family.title, @family %></p>
+    <% end %>
+    
+    <% if @characters.length>0 %>
+        <p>Персонажи этой расы:
+            <% @characters.each do |character| %>
+                <%= link_to character.name, character %>
+            <% end %> 
+        </p>
+    <% end %> 
+    
+    
+    <div class="links">
+        <%= link_to content_tag(:i, "keyboard_backspace", class: "material-icons"), :back %>
+        <%= link_to content_tag(:i, "edit", class: "material-icons"), edit_race_path(@race) %>
+        <%= link_to content_tag(:i, "delete", class: "material-icons"), @race, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+</div>

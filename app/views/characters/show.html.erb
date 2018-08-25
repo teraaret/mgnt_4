@@ -1,0 +1,48 @@
+<div id="page">
+    <p id="notice"><%= notice %></p>
+
+    <h2><%= @character.name %></h2>
+    <hr>
+    <p><%= simple_format(@character.body, {}, wrapper_tag: "p") %></p>
+    
+    <p>
+      <strong>Magenta:</strong>
+      <%= @character.magenta %>
+    </p>
+    
+    <% if @race %>
+        <p>Раса: <%= link_to @race.title, @race %></p>
+    <% end %>
+
+    <p>
+      <strong>Gender:</strong>
+      <%= @character.gender_id %>
+    </p>
+
+    <p>
+      <strong>Story:</strong>
+      <%= @character.story_id %>
+    </p>
+
+    <p>
+      <strong>Faction:</strong>
+      <%= @character.faction_id %>
+    </p>
+
+    <p>
+      <strong>Country:</strong>
+      <%= @character.country_id %>
+    </p>
+    
+    <hr>
+    <p>Последнее обновление: <%= @character.updated_at.strftime('%d %B %Y') %></p>
+    
+    <div class="links">
+        <%= link_to content_tag(:i, "keyboard_backspace", class: "material-icons"), :back %>
+        <%= link_to content_tag(:i, "edit", class: "material-icons"), edit_race_path(@race) %>
+        <%= link_to content_tag(:i, "delete", class: "material-icons"), @race, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+    
+</div>
+
+

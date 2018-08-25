@@ -1,0 +1,41 @@
+<%= form_with(model: race, local: true) do |form| %>
+  <% if race.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(race.errors.count, "error") %> prohibited this race from being saved:</h2>
+
+      <ul>
+      <% race.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :race_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body, id: :race_body %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family_id %>
+    <select name="race[family_id]" id="race_family_id">
+        <option value="0">-- Не выбрано</option>
+        <% @families.each do |family| %>
+            <option value="<%= family.id %>" <% if family.id == race.family_id %>selected<% end %> ><%= family.title %></option>
+        <% end %>
+    </select>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<div class="links">
+    <%= link_to content_tag(:i, "keyboard_backspace", class: "material-icons"), :back %>
+</div>

@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  title_rus: MyString
+  body: MyText
+  tag: MyString
+  character_id: 1
+  faction_id: 1
+  country_id: 1
+  race_id: 1
+
+two:
+  title: MyString
+  title_rus: MyString
+  body: MyText
+  tag: MyString
+  character_id: 1
+  faction_id: 1
+  country_id: 1
+  race_id: 1

@@ -1,0 +1,22 @@
+<div id="page">
+    <p id="notice"><%= notice %></p>
+
+    <span><%= @family.created_at.strftime('%d %B %Y') %></span>
+    <h2><%= @family.title %></h2>
+    <hr>
+    <p><%= simple_format(@family.body, {}, wrapper_tag: "p") %></p>
+    
+    <% if @races.length>0 %>
+        <p>Принадлежащие расы:
+            <% @races.each do |race| %>
+                <%= link_to race.title, race %>
+            <% end %> 
+        </p>
+    <% end %> 
+    
+    <div class="links">
+        <%= link_to content_tag(:i, "keyboard_backspace", class: "material-icons"), :back %>
+        <%= link_to content_tag(:i, "edit", class: "material-icons"), edit_family_path(@family) %>
+        <%= link_to content_tag(:i, "delete", class: "material-icons"), @family, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+</div>

@@ -1,0 +1,228 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@font-face {
+    font-family: Vollkorn; /* Имя шрифта */
+    src: url('Vollkorn-Regular.ttf'); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Exo2; /* Имя шрифта */
+    src: url('Exo2-Regular.ttf'); /* Путь к файлу со шрифтом */
+}
+
+@import 'variables';
+
+* {
+    transition: 0.1s ease;
+}
+
+body {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: $black;
+    color: $white;
+    font-family: 'Vollkorn';
+    background-image: url("bg/races.jpg");
+    background-size: 100%;
+    background-attachment: fixed;
+}
+
+nav {
+    background-color: $black_light;
+    background-color: $tr_white;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-left: -20px;
+    margin-right: -20px;
+    a {
+        font-family: Exo2;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-decoration: none;
+        display: inline-block;
+        color: $white;
+        padding: 10px 25px;
+        &:hover {
+//            background-color: crimson;
+//            background-color: $tr_white_light;
+            background-color: $accent;
+            box-shadow: 0 0 20px $accent;
+        }
+        &:visited {
+            color: $white;
+        }
+    }
+}
+
+#page {
+    background-color: $tr_black;
+    padding: 25px 50px 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    h1,h2,h3 {
+        margin: 0;
+        padding: 0;
+    }
+    h1 {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 30px;
+        text-align: center;
+        font-size: 3em;
+        font-weight: 300;
+    }
+    h2 {
+        font-size: 2em;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        a {
+            color: $grey;
+        }
+    }
+    h3 {
+        font-size: 1.6em;
+    }
+    p {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 1em;
+        font-size: 1.2em;
+        line-height: 1.5em;
+        a {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    a {
+        color: $accent;
+        text-decoration: none;
+        &:hover {
+            color: $white;
+            background-color: transparent;
+        }
+    }
+    ul {
+        font-size: 1.2em;
+        list-style: square;
+        margin: 0;
+        padding-left: 20px;
+    }
+    
+    .col-2 {
+        vertical-align: top;
+        text-align: center;
+        display: inline-block;
+        width: 14%;
+        padding-left: 1%;
+        padding-right: 1%;
+        hr {
+            margin-bottom: 20px;
+        }
+        p {
+            margin: 0;
+            margin-bottom: 10px;
+            padding: 0;
+        }
+        a {
+            color: #bbb;
+            &:hover {
+                color: $white;
+            }
+        }
+    }
+    
+    a.center_btn {
+        text-align: center;
+        color: $white;
+        text-transform: uppercase;
+        display: block;
+        width: 200px;
+        margin: 0 auto 40px;
+        padding: 10px 30px 6px;
+        background-color: $tr_white;
+        font-size: 1.2em;
+        &:hover {
+//            background-color: $white;
+//            color: $black;
+            background-color: $accent;
+            box-shadow: 0 0 20px $accent;
+        }
+    }
+    .post {
+        margin-bottom: 50px;
+    }
+}
+
+.links {
+    text-align: right;
+    a {
+        font-family: Exo2;
+        text-decoration: none;
+        color: $white !important;
+        padding: 5px 8px;
+        display: inline-block;
+        &:hover {
+            background-color: $tr_white;
+        }
+    }
+}
+
+form {
+    font-family: Exo2;
+    background-color: $tr_black;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 20px 0;
+    label {
+        display: block;
+        padding-top: 20px;
+        padding-bottom: 10px;
+    }
+    input,textarea,select {
+        display: inline-block;
+        width: 400px;
+        padding: 10px;
+        border: none;
+        background-color: $tr_white;
+        color: $white;
+        &:focus {
+            background-color: $tr_white_light;
+        }
+        option {
+            background-color: $black;
+            color: $white;
+            font-size: 1.2em;
+        }
+    }
+    textarea {
+        height: 300px;
+        width: 800px;
+    }
+    input[type='submit'] {
+        margin-top: 25px;
+        width: 400px;
+        background-color: $tr_white;
+        cursor: pointer;
+        &:hover {
+            background-color: $white;
+            color: $black;
+        }
+    }
+}

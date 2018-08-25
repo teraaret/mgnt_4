@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  rus_title: MyString
+  body: MyText
+  family_id: 1
+
+two:
+  title: MyString
+  rus_title: MyString
+  body: MyText
+  family_id: 1

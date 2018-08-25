@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  title_rus: MyString
+  body: MyText
+  capital_id: 1
+  type: 1
+  parent_id: 1
+
+two:
+  title: MyString
+  title_rus: MyString
+  body: MyText
+  capital_id: 1
+  type: 1
+  parent_id: 1
