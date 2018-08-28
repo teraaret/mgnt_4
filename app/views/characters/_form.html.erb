@@ -30,36 +30,56 @@
             <% end %>
         </select>
     </div>
+    
+    <div class="field">
+        <%= form.label :gender_id %>
+        <select name="character[gender_id]" id="character_gender_id">
+            <option value="0">-- Не выбрано</option>
+            <% @genders.each do |gender| %>
+                <option value="<%= gender.id %>" <% if gender.id == character.gender_id %>selected<% end %> ><%= gender.title %></option>
+            <% end %>
+        </select>
+    </div>
+    
+    <div class="field">
+        <%= form.label :magenta_id %>
+        <select name="character[magenta]" id="character_magenta_id">
+            <option value="0" <% if character.magenta == 0 %>selected<% end %> >Нет способностей</option>
+            <option value="1" <% if character.magenta == 1 %>selected<% end %> >Энох</option>
+            <option value="2" <% if character.magenta == 2 %>selected<% end %> >Ятр</option>
+            <option value="3" <% if character.magenta == 3 %>selected<% end %> >Фиарр</option>
+        </select>
+    </div>
 
-  <div class="field">
-    <%= form.label :family_id %>
-    <%= form.number_field :family_id, id: :character_family_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :gender %>
-    <%= form.number_field :gender, id: :character_gender %>
-  </div>
-
-  <div class="field">
-    <%= form.label :magenta %>
-    <%= form.number_field :magenta, id: :character_magenta %>
-  </div>
-
-  <div class="field">
-    <%= form.label :story_id %>
-    <%= form.number_field :story_id, id: :character_story_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :faction_id %>
-    <%= form.number_field :faction_id, id: :character_faction_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country_id %>
-    <%= form.number_field :country_id, id: :character_country_id %>
-  </div>
+    <div class="field">
+        <%= form.label :story_id %>
+        <select name="character[story_id]" id="character_story_id">
+            <option value="0">-- Не выбрано</option>
+            <% @stories.each do |story| %>
+                <option value="<%= story.id %>" <% if story.id == character.story_id %>selected<% end %> ><%= story.title %></option>
+            <% end %>
+        </select>
+    </div>
+    
+    <div class="field">
+        <%= form.label :faction_id %>
+        <select name="character[faction_id]" id="character_faction_id">
+            <option value="0">-- Не выбрано</option>
+            <% @factions.each do |faction| %>
+                <option value="<%= faction.id %>" <% if faction.id == character.faction_id %>selected<% end %> ><%= faction.title %></option>
+            <% end %>
+        </select>
+    </div>
+    
+    <div class="field">
+        <%= form.label :country_id %>
+        <select name="character[country_id]" id="character_country_id">
+            <option value="0">-- Не выбрано</option>
+            <% @countries.each do |country| %>
+                <option value="<%= country.id %>" <% if country.id == character.country_id %>selected<% end %> ><%= country.title %></option>
+            <% end %>
+        </select>
+    </div>
 
   <div class="actions">
     <%= form.submit %>

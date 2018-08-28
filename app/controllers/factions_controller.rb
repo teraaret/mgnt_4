@@ -69,6 +69,6 @@ class FactionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def faction_params
-      params.require(:faction).permit(:title, :title_rus, :body, :country_id)
+      params.require(:faction).permit(:title, :body, :country_id)
     end
 end

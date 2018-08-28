@@ -24,7 +24,6 @@
   <div class="field">
     <%= form.label :family_id %>
     <select name="race[family_id]" id="race_family_id">
-        <option value="0">-- Не выбрано</option>
         <% @families.each do |family| %>
             <option value="<%= family.id %>" <% if family.id == race.family_id %>selected<% end %> ><%= family.title %></option>
         <% end %>

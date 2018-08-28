@@ -10,10 +10,39 @@ class CharactersController < ApplicationController
     # GET /characters/1
     # GET /characters/1.json
     def show
+        # find race
         if Race.exists?(@character.race_id)
             @race = Race.find(@character.race_id)
         else
             @race = nil
+        end
+        
+        # find gender
+        if Gender.exists?(@character.gender_id)
+            @gender = Gender.find(@character.gender_id)
+        else
+            @gender = nil
+        end
+        
+        # find story
+        if Story.exists?(@character.story_id)
+            @story = Story.find(@character.story_id)
+        else
+            @story = nil
+        end
+        
+        # find faction
+        if Faction.exists?(@character.faction_id)
+            @faction = Faction.find(@character.faction_id)
+        else
+            @faction = nil
+        end
+        
+        # find country
+        if Country.exists?(@character.country_id)
+            @country = Country.find(@character.country_id)
+        else
+            @country = nil
         end
     end
 
@@ -21,11 +50,19 @@ class CharactersController < ApplicationController
     def new
         @character = Character.new
         @races = Race.all
+        @genders = Gender.all
+        @stories = Story.all
+        @factions = Faction.all
+        @countries = Country.all
     end
 
     # GET /characters/1/edit
     def edit
         @races = Race.all
+        @genders = Gender.all
+        @stories = Story.all
+        @factions = Faction.all
+        @countries = Country.all
     end
 
   # POST /characters

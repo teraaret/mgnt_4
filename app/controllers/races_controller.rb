@@ -11,12 +11,13 @@ class RacesController < ApplicationController
   # GET /races/1
   # GET /races/1.json
   def show
+        # find family
         if Family.exists?(@race.family_id)
             @family = Family.find(@race.family_id)
         else
             @family = nil
         end
-        
+      
        @characters = Character.where(race_id: @race.id)
   end
 

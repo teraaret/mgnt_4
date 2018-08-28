@@ -1,46 +1,52 @@
 <div id="page">
     <p id="notice"><%= notice %></p>
 
-    <h2><%= @character.name %></h2>
-    <hr>
-    <p><%= simple_format(@character.body, {}, wrapper_tag: "p") %></p>
+    <h1><%= @character.name %></h1>
     
-    <p>
-      <strong>Magenta:</strong>
-      <%= @character.magenta %>
-    </p>
+    <hr>
+    
+    <p><%= simple_format(@character.body, {}, wrapper_tag: "p") %></p>
     
     <% if @race %>
         <p>Раса: <%= link_to @race.title, @race %></p>
     <% end %>
 
-    <p>
-      <strong>Gender:</strong>
-      <%= @character.gender_id %>
-    </p>
-
-    <p>
-      <strong>Story:</strong>
-      <%= @character.story_id %>
-    </p>
-
-    <p>
-      <strong>Faction:</strong>
-      <%= @character.faction_id %>
-    </p>
-
-    <p>
-      <strong>Country:</strong>
-      <%= @character.country_id %>
+    <% if @gender %>
+        <p>Пол: <%= link_to @gender.title, @gender %></p>
+    <% end %>
+    
+    <p>Медиативность: 
+    <% if @character.magenta == 0 %>
+        Нет способностей
+    <% elsif @character.magenta == 1 %>
+        Энох
+    <% elsif @character.magenta == 2 %>
+        Ятр
+    <% elsif @character.magenta == 3 %>
+        Фиарр
+    <% end %>
     </p>
     
+    <% if @story %>
+        <p>История: <%= link_to @story.title, @story %></p>
+    <% end %>
+    
+    <% if @faction %>
+        <p>Фракция: <%= link_to @faction.title, @faction %></p>
+    <% end %>
+    
+    <% if @country %>
+        <p>Родом из: <%= link_to @country.title, @country %></p>
+    <% end %>
+    
     <hr>
+    
     <p>Последнее обновление: <%= @character.updated_at.strftime('%d %B %Y') %></p>
     
     <div class="links">
         <%= link_to content_tag(:i, "keyboard_backspace", class: "material-icons"), :back %>
-        <%= link_to content_tag(:i, "edit", class: "material-icons"), edit_race_path(@race) %>
-        <%= link_to content_tag(:i, "delete", class: "material-icons"), @race, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to content_tag(:i, "edit", class: "material-icons"), edit_character_path(@character) %>
+        <%= link_to content_tag(:i, "delete", class: "material-icons"), @character, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
     
 </div>

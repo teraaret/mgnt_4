@@ -2,15 +2,23 @@
 
     <p id="notice"><%= notice %></p>
 
-    <h1>Персонажи <sup><%= @characters.count %></sup></h1>
+    <h1>Персонажи</h1>
 
     <%= link_to 'Новая запись', new_character_path, class: 'center_btn' %>
+    
+    <p class="_center">Нас уже <%= @characters.count %>!</p>
+    
+    <div class="characters">
+        <ul>
+            <% @characters.each do |character| %>
+                <li><%= link_to character.name, character %></li>
+            <% end %>
+        </ul>
+    </div>
 
 </div>
 
 <!---->
-
-<p id="notice"><%= notice %></p>
 
 <h1>Characters</h1>
 

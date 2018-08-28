@@ -6,10 +6,8 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Title rus</th>
       <th>Body</th>
       <th>Capital</th>
-      <th>Type</th>
       <th>Parent</th>
       <th colspan="3"></th>
     </tr>
@@ -19,10 +17,8 @@
     <% @countries.each do |country| %>
       <tr>
         <td><%= country.title %></td>
-        <td><%= country.title_rus %></td>
         <td><%= country.body %></td>
         <td><%= country.capital_id %></td>
-        <td><%= country.type %></td>
         <td><%= country.parent_id %></td>
         <td><%= link_to 'Show', country %></td>
         <td><%= link_to 'Edit', edit_country_path(country) %></td>

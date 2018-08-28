@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180824185401) do
+ActiveRecord::Schema.define(version: 20180828155734) do
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20180824185401) do
   create_table "countries", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "type"
     t.integer "capital_id"
     t.integer "parent_id"
     t.datetime "created_at", null: false
@@ -64,6 +63,7 @@ ActiveRecord::Schema.define(version: 20180824185401) do
     t.integer "faction_id"
     t.integer "country_id"
     t.integer "race_id"
+    t.integer "family_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -79,6 +79,13 @@ ActiveRecord::Schema.define(version: 20180824185401) do
     t.string "title"
     t.text "body"
     t.integer "family_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
